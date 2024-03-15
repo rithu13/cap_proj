@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Book Catalog</h1>
+        <ul>
+            <li v-for="book in books" :key="book.ID">
+                <h2>{{ book.title }}</h2>
+                <p>Author: {{ book.author }}</p>
+                <p>Description: {{ book.descr }}</p>
+                <p>Stock: {{ book.stock }}</p>
+                <button @click="submitOrder(book.ID)">Order</button>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
